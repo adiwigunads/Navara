@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-navara-50: #ebf5fb;
+    --color-navara-100: #d4eaf7;
+    --color-navara-200: #a8d4ef;
+    --color-navara-300: #7fb3d5;
+    --color-navara-400: #5d99c6;
+    --color-navara-500: #4a85b5;
+    --color-navara-600: #3d6f99;
+    --color-navara-700: #335a7d;
+    --color-navara-800: #2b4a66;
+    --color-navara-900: #243d54;
+}
+
+@layer utilities {
+    .hero-bg {
+        background-size: cover;
+        background-position: center;
+        transition: background-image 0.8s ease-in-out;
+    }
+
+    .dest-card {
+        aspect-ratio: 3 / 4;
+        min-height: 280px;
+    }
+
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
