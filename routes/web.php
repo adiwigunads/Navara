@@ -52,7 +52,9 @@ Route::middleware(['auth', 'verifikator'])
     ->group(function () {
         Route::get('/', [VerifikatorDashboardController::class, 'index'])->name('dashboard');
 
-        Route::resource('kriteria', VerifikatorKriteriaController::class)->except(['show']);
+        Route::resource('kriteria', VerifikatorKriteriaController::class)
+            ->parameters(['kriteria' => 'kriteria'])
+            ->except(['show']);
 
         Route::get('ranking', [VerifikatorRankingController::class, 'index'])->name('ranking.index');
         Route::get('ranking/unduh', [VerifikatorRankingController::class, 'download'])->name('ranking.download');

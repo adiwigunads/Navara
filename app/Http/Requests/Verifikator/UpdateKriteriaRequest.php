@@ -19,7 +19,7 @@ class UpdateKriteriaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'kode' => ['required', 'string', 'max:10', Rule::unique('kriteria', 'kode')->ignore($this->route('kriterium'))],
+            'kode' => ['required', 'string', 'max:10', Rule::unique('kriteria', 'kode')->ignore($this->route('kriteria'))],
             'nama' => ['required', 'string', 'max:100'],
             'tipe' => ['required', Rule::enum(KriteriaTipe::class)],
             'bobot' => ['required', 'numeric', 'min:0.01', 'max:1'],
